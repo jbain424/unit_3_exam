@@ -15,8 +15,8 @@ const getAll = (req, res, next) => {
 
 
 const getSightingsBySpecies = (req, res, next) => {
-  let tagId = parseInt(req.params.id);
-  db.any('SELECT * FROM sightings WHERE species_id=$1', [tagId])
+  let userId = parseInt(req.params.id);
+  db.any('SELECT * FROM sightings WHERE species_id=$1', [userId])
     .then(data => {
       res.status(200)
       .json({

@@ -28,8 +28,8 @@ const getOne = (req, res, next) => {
 };
 //
 const getTagsByResearcher = (req, res, next) => {
-  let tagId = parseInt(req.params.id);
-  db.any('SELECT * FROM taggings WHERE researchers_id=$1', [tagId])
+  let userId = parseInt(req.params.id);
+  db.any('SELECT * FROM taggings WHERE researchers_id=$1', [userId])
     .then(data => {
       res.status(200)
       .json({
